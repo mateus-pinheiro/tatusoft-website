@@ -474,43 +474,236 @@ input[type="email"].error {
 /* ========== Mobile Responsive ========== */
 @media (max-width: 640px) {
     html, body {
-        height: auto;
-        overflow: auto;
+        height: 100%;
+        overflow: hidden;
     }
 
     .wrapper {
-        height: auto;
-        min-height: 100vh;
-        overflow: visible;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
 
+    /* Compact Navigation */
+    .nav {
+        padding: 12px 16px;
+    }
+
+    .nav-menu {
+        font-size: 12px;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .logo-pebble {
+        width: 18px;
+        height: 11px;
+    }
+
+    /* Centered Hero */
     .hero {
-        overflow: visible;
-        justify-content: flex-start;
-        padding: 8px 0 40px;
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .hero-title {
+        font-size: clamp(32px, 8vw, 42px);
+        margin-bottom: 24px;
     }
 
     .hero-grid {
         grid-template-columns: 1fr;
+        gap: 0;
+        width: 100%;
     }
 
-    .nav-menu {
-        font-size: 13px;
+    /* Hide descriptions on mobile */
+    .hero-info p,
+    .mono-accent {
+        display: none;
     }
 
-    .logo {
-        font-size: 22px;
+    .hero-info h2 {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Compact Form */
+    .capture-form {
+        gap: 10px;
+    }
+
+    .textarea-wrapper {
+        position: relative;
+    }
+
+    textarea {
+        height: 80px;
+        padding: 14px 16px;
+        font-size: 15px;
+        border-radius: 14px;
+    }
+
+    .char-count {
+        font-size: 10px;
+        right: 12px;
+        bottom: 8px;
+    }
+
+    input[type="email"] {
+        height: 48px;
+        font-size: 15px;
+        padding: 0 16px;
+        border-radius: 12px;
+    }
+
+    /* Fixed button position */
+    .form-actions {
+        margin-top: 16px;
+        justify-content: center;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    .form-note {
+        display: none; /* Hide "de graça" text on mobile */
+    }
+
+    /* Compact Footer */
+    .footer {
+        padding: 0;
     }
 
     .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+        padding: 12px 16px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
     }
 
+    .footer-left,
     .footer-right {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-copyright {
+        font-size: 11px;
+    }
+
+    .footer-right a[href^="mailto"] {
+        display: none; /* Hide email in footer on mobile */
+    }
+
+    .lang-switch-footer {
+        font-size: 11px;
+    }
+
+    .footer-pebble {
+        width: 16px;
+        height: 10px;
+    }
+
+    /* Adjust WhatsApp button */
+    .whatsapp-button {
+        width: 54px;
+        height: 54px;
+        right: 16px;
+        bottom: 70px; /* Move up to not overlap with footer */
+    }
+
+    .whatsapp-icon {
+        width: 54px;
+        height: 54px;
+    }
+
+    .whatsapp-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Extra small devices (very small phones) */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-info h2 {
+        font-size: 18px;
+    }
+
+    textarea {
+        height: 70px;
+        font-size: 14px;
+    }
+
+    input[type="email"] {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 640px) and (orientation: landscape) {
+    .hero {
+        padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .hero-info h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    textarea {
+        height: 60px;
+    }
+
+    input[type="email"] {
+        height: 40px;
+    }
+
+    .form-actions {
+        margin-top: 12px;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+    }
+
+    .footer-content {
+        padding: 8px 16px;
     }
 }

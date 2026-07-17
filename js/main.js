@@ -134,11 +134,15 @@ class WordRotator {
         this.desktopActive = true;
         this.stopAutoRotation();
 
+        const isMobile = window.innerWidth <= 640;
+        const scrollThreshold = isMobile ? 40 : 70; // Less sensitive on mobile
+        const touchThreshold = isMobile ? 30 : 44; // More sensitive touch on mobile
+
         // Mouse wheel
         window.addEventListener('wheel', this.onWheel = (e) => {
             if (e.ctrlKey) return;
             this.accumulator += e.deltaY;
-            if (Math.abs(this.accumulator) >= 70) {
+            if (Math.abs(this.accumulator) >= scrollThreshold) {
                 const direction = this.accumulator > 0 ? 1 : -1;
                 this.accumulator = 0;
                 this.advanceWord(direction);
@@ -153,7 +157,7 @@ class WordRotator {
         window.addEventListener('touchmove', this.onTouchMove = (e) => {
             if (this.touchY == null) return;
             const dy = this.touchY - e.touches[0].clientY;
-            if (Math.abs(dy) >= 44) {
+            if (Math.abs(dy) >= touchThreshold) {
                 this.touchY = e.touches[0].clientY;
                 this.advanceWord(dy > 0 ? 1 : -1);
             }
@@ -210,26 +214,28 @@ class WordRotator {
         const body = document.body;
 
         if (mobile) {
-            // Mobile settings
-            html.style.height = 'auto';
+            // Mobile settings - Allow overflow for scroll interaction but keep layout fixed
+            html.style.height = '100%';
             html.style.overflow = 'auto';
-            body.style.height = 'auto';
+            body.style.height = '100%';
             body.style.overflow = 'auto';
 
             if (wrapper) {
-                wrapper.style.height = 'auto';
-                wrapper.style.minHeight = '100vh';
-                wrapper.style.overflow = 'visible';
+                wrapper.style.height = '100vh';
+                wrapper.style.minHeight = '';
+                wrapper.style.overflow = 'hidden';
             }
 
             if (hero) {
-                hero.style.overflow = 'visible';
-                hero.style.justifyContent = 'flex-start';
-                hero.style.padding = '8px 0 40px';
+                hero.style.overflow = 'hidden';
+                hero.style.justifyContent = 'center';
+                hero.style.alignItems = 'center';
+                hero.style.padding = '0 20px';
             }
 
-            this.stopDesktopInteraction();
-            this.startAutoRotation();
+            // Enable scroll/touch interaction on mobile (not auto-rotation)
+            this.stopAutoRotation();
+            this.startDesktopInteraction(); // Use same interaction as desktop
         } else {
             // Desktop settings
             html.style.height = '';
