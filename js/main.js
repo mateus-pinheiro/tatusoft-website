@@ -229,7 +229,7 @@ class WordRotator {
             if (hero) {
                 hero.style.overflow = 'hidden';
                 hero.style.justifyContent = 'center';
-                hero.style.alignItems = 'center';
+                hero.style.alignItems = 'flex-start';
                 hero.style.padding = '0 20px';
             }
 

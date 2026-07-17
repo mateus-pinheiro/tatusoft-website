@@ -487,7 +487,7 @@ input[type="email"].error {
 
     /* Compact Navigation */
     .nav {
-        padding: 12px 16px;
+        padding: 10px 16px;
     }
 
     .nav-menu {
@@ -504,16 +504,16 @@ input[type="email"].error {
         height: 11px;
     }
 
-    /* Centered Hero */
+    /* Left-aligned Hero */
     .hero {
         flex: 1;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         padding: 0 20px;
-        text-align: center;
+        text-align: left;
     }
 
     .container {
@@ -523,7 +523,7 @@ input[type="email"].error {
 
     .hero-title {
         font-size: clamp(32px, 8vw, 42px);
-        margin-bottom: 24px;
+        margin-bottom: 20px;
     }
 
     .hero-grid {
@@ -540,8 +540,8 @@ input[type="email"].error {
 
     .hero-info h2 {
         font-size: 20px;
-        text-align: center;
-        margin-bottom: 20px;
+        text-align: left;
+        margin-bottom: 16px;
     }
 
     /* Compact Form */
@@ -575,8 +575,8 @@ input[type="email"].error {
 
     /* Fixed button position */
     .form-actions {
-        margin-top: 16px;
-        justify-content: center;
+        margin-top: 12px;
+        justify-content: flex-start;
     }
 
     .btn-primary {
@@ -595,7 +595,7 @@ input[type="email"].error {
     }
 
     .footer-content {
-        padding: 12px 16px;
+        padding: 10px 16px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -622,8 +622,7 @@ input[type="email"].error {
     }
 
     .footer-pebble {
-        width: 16px;
-        height: 10px;
+        display: none; /* Hide logo icon in footer on mobile */
     }
 
     /* Adjust WhatsApp button */
