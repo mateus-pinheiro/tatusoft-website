@@ -327,13 +327,8 @@ class FormHandler {
             // Navigate after animation
             setTimeout(() => {
                 const queryParam = idea ? `?ideia=${encodeURIComponent(idea)}` : '';
-
-                // Check if the AI conversation page exists
-                const aiPagePath = '/Users/mateusfrancapinheiro/claude/tatusoft/website/design-site/Tatusoft - Conversa IA.dc.html';
-
-                // For now, just reload the page or you could navigate to a different page
-                // In production, this would navigate to the AI conversation page
-                window.location.href = '#conversa' + queryParam;
+                // Navigate to AI conversation page
+                window.location.href = 'conversa-ia.html' + queryParam;
             }, 900);
         }
     }
