@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tatusoft - Consultoria brasileira de produtos digitais. Construímos produtos digitais de alta complexidade com a mesma exigência, oferecendo o melhor resultado aos nossos parceiros.">
+    <meta name="keywords" content="tatusoft, consultoria, produtos digitais, desenvolvimento, software, B2B, empresas">
+    <title>tatusoft - consultoria brasileira de produtos digitais</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231B1915'/%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Page specific styles */
+        html { scroll-behavior: smooth; }
+        body { overflow: auto; height: auto; }
+
+        .page-wrapper { min-height: 100vh; }
+
+        /* Hero Section B2B */
+        .hero-b2b {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: clamp(56px, 10vw, 130px) clamp(20px, 4vw, 48px) clamp(64px, 9vw, 120px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-b2b h1 {
+            margin: 0;
+            font-size: clamp(42px, 7.6vw, 96px);
+            font-weight: 900;
+            font-stretch: 118%;
+            letter-spacing: -0.04em;
+            line-height: 1.0;
+            max-width: 980px;
+        }
+
+        .hero-b2b p {
+            margin: clamp(20px, 3vw, 32px) 0 0;
+            font-size: clamp(18px, 2.4vw, 26px);
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
+            max-width: 640px;
+            color: var(--grafite);
+        }
+
+        /* Ticker/Banner */
+        .ticker-section {
+            overflow: hidden;
+            width: 100%;
+            background: var(--grafite);
+            color: var(--papel);
+            padding: clamp(16px, 2.4vw, 26px) 0;
+        }
+
+        .ticker-content {
+            display: flex;
+            width: max-content;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+            will-change: transform;
+        }
+
+        .ticker-items {
+            display: flex;
+            align-items: center;
+            gap: clamp(30px, 4vw, 56px);
+            padding-right: clamp(30px, 4vw, 56px);
+            font-size: clamp(22px, 3.2vw, 36px);
+            font-weight: 800;
+            font-stretch: 112%;
+            letter-spacing: 0.005em;
+            text-transform: uppercase;
+        }
+
+        .ticker-dot {
+            opacity: 0.32;
+            font-size: 0.42em;
+            transform: translateY(-0.12em);
+        }
+
+        @keyframes ticker {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* Metodologia Section */
+        .metodologia-section {
+            background: #FCFBF8;
+            border-top: 1px solid rgba(27, 25, 21, 0.12);
+            border-bottom: 1px solid rgba(27, 25, 21, 0.12);
+        }
+
+        .metodologia-content {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 48px);
+        }
+
+        .section-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 16px;
+            letter-spacing: 0.08em;
+            color: var(--pedra);
+        }
+
+        .section-title {
+            margin: 18px 0 0;
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            font-stretch: 112%;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            max-width: 720px;
+        }
+
+        .steps-grid {
+            margin-top: clamp(36px, 5vw, 56px);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(28px, 4vw, 40px);
+        }
+
+        .step-card {
+            border-top: 2px solid var(--grafite);
+            padding-top: 20px;
+        }
+
+        .step-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            color: var(--pedra);
+        }
+
+        .step-title {
+            margin-top: 10px;
+            font-size: clamp(22px, 2.6vw, 27px);
+            font-weight: 800;
+            font-stretch: 110%;
+            letter-spacing: -0.02em;
+        }
+
+        .step-desc {
+            margin: 12px 0 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--pedra);
+        }
+
+        /* Coleta Section */
+        .coleta-section {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: clamp(64px, 10vw, 130px) clamp(20px, 4vw, 48px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .coleta-title {
+            margin: 0;
+            font-size: clamp(32px, 5.4vw, 58px);
+            font-weight: 800;
+            font-stretch: 112%;
+            letter-spacing: -0.035em;
+            line-height: 1.05;
+            max-width: 760px;
+        }
+
+        .coleta-subtitle {
+            margin: 18px 0 0;
+            font-size: clamp(15px, 1.8vw, 18px);
+            color: var(--pedra);
+            line-height: 1.55;
+            max-width: 540px;
+        }
+
+        .idea-input-container {
+            margin-top: clamp(28px, 4vw, 40px);
+            width: 640px;
+            max-width: 100%;
+            min-height: 62px;
+            border: 1.5px solid var(--grafite);
+            border-radius: 999px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            padding: 8px 8px 8px clamp(18px, 3vw, 26px);
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .idea-input-container:hover {
+            box-shadow: 0 4px 12px rgba(27, 25, 21, 0.15);
+        }
+
+        .idea-input {
+            flex: 1;
+            min-width: 0;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 16.5px;
+            color: var(--grafite);
+            font-family: 'Archivo', system-ui, sans-serif;
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        .idea-submit {
+            width: 46px;
+            height: 46px;
+            flex: none;
+            border-radius: 999px;
+            background: var(--grafite);
+            color: var(--papel);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            cursor: pointer;
+        }
+
+        .coleta-note {
+            margin-top: 14px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 15px;
+            letter-spacing: 0.06em;
+            color: var(--pedra);
+        }
+
+        /* Parceiros Section */
+        .parceiros-section {
+            background: var(--grafite);
+            color: var(--papel);
+        }
+
+        .parceiros-content {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 48px);
+        }
+
+        .parceiros-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 16px;
+            letter-spacing: 0.08em;
+            color: rgba(244, 241, 234, 0.55);
+        }
+
+        .parceiros-title {
+            margin: 18px 0 0;
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            font-stretch: 112%;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            max-width: 720px;
+            color: var(--papel);
+        }
+
+        .parceiros-grid {
+            margin-top: clamp(36px, 5vw, 56px);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+            gap: clamp(16px, 2.5vw, 24px);
+        }
+
+        .parceiro-card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            border-radius: 14px;
+            padding: clamp(24px, 3vw, 34px);
+            cursor: pointer;
+            transition: all 0.22s ease;
+            background: var(--grafite);
+            border: 1px solid rgba(244, 241, 234, 0.2);
+            color: var(--papel);
+        }
+
+        .parceiro-card:hover {
+            background: var(--papel);
+            border-color: var(--papel);
+            color: var(--grafite);
+            opacity: 1;
+        }
+
+        .parceiro-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .parceiro-nome {
+            font-size: 21px;
+            font-weight: 800;
+            font-stretch: 110%;
+            letter-spacing: -0.02em;
+        }
+
+        .parceiro-arrow {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 15px;
+            opacity: 0.5;
+        }
+
+        .parceiro-desc {
+            margin: 8px 0 0;
+            font-size: 15px;
+            line-height: 1.55;
+            opacity: 0.62;
+        }
+
+        .parceiro-tag {
+            margin-top: 16px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 0.05em;
+            opacity: 0.46;
+        }
+
+        /* Footer B2B */
+        .footer-b2b {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: clamp(36px, 5vw, 56px) clamp(20px, 4vw, 48px) clamp(28px, 4vw, 44px);
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 48px;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-stretch: 125%;
+            letter-spacing: -0.045em;
+        }
+
+        .footer-tagline {
+            font-size: 17px;
+            color: var(--pedra);
+            max-width: 280px;
+            line-height: 1.55;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 32px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-divider {
+            margin-top: 32px;
+            border-top: 1px solid rgba(27, 25, 21, 0.14);
+            padding-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .hero-b2b {
+                padding: clamp(40px, 8vw, 64px) 20px;
+            }
+
+            .hero-b2b h1 {
+                font-size: clamp(32px, 10vw, 48px);
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .parceiros-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .idea-input-container {
+                padding: 6px 6px 6px 20px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Transition Splash (hidden by default) -->
+    <div id="transitionSplash" class="transition-splash" style="display: none;">
+        <div class="splash-pebble"></div>
+        <div class="splash-logo">tatusoft</div>
+        <div class="splash-label" data-pt="preparando sua conversa" data-en="setting up your chat">preparando sua conversa</div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="page-wrapper">
+        <!-- Navigation -->
+        <header class="nav">
+            <a href="#" class="logo">
+                <span class="logo-pebble"></span>
+                tatusoft
+            </a>
+            <nav class="nav-menu">
+                <a href="#ideia" class="nav-link" style="background: var(--grafite); color: var(--papel); border-radius: 999px; padding: 9px 18px;" data-pt="conversar" data-en="let's talk">conversar</a>
+                <button class="lang-switch" aria-label="alternar idioma">
+                    <span class="lang-pt active">pt</span>
+                    <span class="lang-divider"> · </span>
+                    <span class="lang-en">en</span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-b2b">
+            <h1 data-pt="construímos produtos digitais." data-en="we build digital products.">
+                construímos produtos digitais.
+            </h1>
+            <p data-pt="projetamos desde simples projetos até ambientes de alta complexidade com a mesma exigência, oferecendo o melhor resultado aos nossos parceiros."
+               data-en="we design everything from simple projects to highly complex systems with the same rigor, delivering the best results to our partners.">
+                projetamos desde simples projetos até ambientes de alta complexidade com a mesma exigência, oferecendo o melhor resultado aos nossos parceiros.
+            </p>
+        </section>
+
+        <!-- Ticker/Banner -->
+        <section class="ticker-section">
+            <div class="ticker-content">
+                <div class="ticker-items">
+                    <span data-pt="mvp" data-en="mvp">mvp</span><span class="ticker-dot">●</span>
+                    <span data-pt="sistema completo" data-en="full system">sistema completo</span><span class="ticker-dot">●</span>
+                    <span data-pt="site" data-en="website">site</span><span class="ticker-dot">●</span>
+                    <span data-pt="app" data-en="app">app</span><span class="ticker-dot">●</span>
+                    <span data-pt="escopo aberto" data-en="open scope">escopo aberto</span><span class="ticker-dot">●</span>
+                    <span data-pt="escopo fechado" data-en="fixed scope">escopo fechado</span><span class="ticker-dot">●</span>
+                    <span data-pt="alocação de time" data-en="team allocation">alocação de time</span><span class="ticker-dot">●</span>
+                </div>
+                <div class="ticker-items" aria-hidden="true">
+                    <span data-pt="mvp" data-en="mvp">mvp</span><span class="ticker-dot">●</span>
+                    <span data-pt="sistema completo" data-en="full system">sistema completo</span><span class="ticker-dot">●</span>
+                    <span data-pt="site" data-en="website">site</span><span class="ticker-dot">●</span>
+                    <span data-pt="app" data-en="app">app</span><span class="ticker-dot">●</span>
+                    <span data-pt="escopo aberto" data-en="open scope">escopo aberto</span><span class="ticker-dot">●</span>
+                    <span data-pt="escopo fechado" data-en="fixed scope">escopo fechado</span><span class="ticker-dot">●</span>
+                    <span data-pt="alocação de time" data-en="team allocation">alocação de time</span><span class="ticker-dot">●</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodologia Section -->
+        <section id="metodo" class="metodologia-section">
+            <div class="metodologia-content">
+                <div class="section-label" data-pt="como funciona" data-en="how it works">como funciona</div>
+                <h2 class="section-title">
+                    <span data-pt="três passos," data-en="three steps,">três passos,</span><br>
+                    <span data-pt="nenhuma surpresa." data-en="no surprises.">nenhuma surpresa.</span>
+                </h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-title" data-pt="primeiro diagnóstico" data-en="first diagnosis">primeiro diagnóstico</div>
+                        <p class="step-desc" data-pt="descreva rapidamente o que precisa e receba um primeiro orçamento aproximado de horas de nosso agente de IA."
+                           data-en="briefly describe what you need and get a first rough estimate of hours from our AI agent.">
+                            descreva rapidamente o que precisa e receba um primeiro orçamento aproximado de horas de nosso agente de IA.
+                        </p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-title" data-pt="aprovar orçamento" data-en="approve the quote">aprovar orçamento</div>
+                        <p class="step-desc" data-pt="agende uma reunião com nossos especialistas para aprofundarmos no seu negócio e construirmos um orçamento real para a sua solução."
+                           data-en="book a meeting with our specialists so we can dive into your business and build a real quote for your solution.">
+                            agende uma reunião com nossos especialistas para aprofundarmos no seu negócio e construirmos um orçamento real para a sua solução.
+                        </p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-title" data-pt="entrega em marcos" data-en="milestone delivery">entrega em marcos</div>
+                        <p class="step-desc" data-pt="definiremos os grandes marcos da entrega e trabalharemos em cima disso, fazendo acompanhamento frequente com o nosso parceiro."
+                           data-en="we'll define the major delivery milestones and work against them, checking in frequently with our partner.">
+                            definiremos os grandes marcos da entrega e trabalharemos em cima disso, fazendo acompanhamento frequente com o nosso parceiro.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coleta da Ideia Section -->
+        <section id="ideia" class="coleta-section">
+            <h2 class="coleta-title" data-pt="o que você quer construir?" data-en="what do you want to build?">
+                o que você quer construir?
+            </h2>
+            <p class="coleta-subtitle" data-pt="escreva a ideia do seu jeito. nossa IA conversa com você e devolve uma primeira estimativa de horas, de graça, sem reunião."
+               data-en="write your idea your way. our AI chats with you and returns a first estimate of hours, for free, no meeting required.">
+                escreva a ideia do seu jeito. nossa IA conversa com você e devolve uma primeira estimativa de horas, de graça, sem reunião.
+            </p>
+            <div class="idea-input-container" onclick="window.location.href='conversa-ia.html'">
+                <input class="idea-input"
+                       placeholder="um app de agendamento para clínicas…"
+                       data-placeholder-pt="um app de agendamento para clínicas…"
+                       data-placeholder-en="a scheduling app for clinics…"
+                       readonly>
+                <button class="idea-submit" aria-label="enviar ideia">→</button>
+            </div>
+            <div class="coleta-note" data-pt="estimativa em minutos · de graça · sem compromisso"
+                 data-en="estimate in minutes · free · no commitment">
+                estimativa em minutos · de graça · sem compromisso
+            </div>
+        </section>
+
+        <!-- Parceiros Section -->
+        <section id="parceiros" class="parceiros-section">
+            <div class="parceiros-content">
+                <div class="parceiros-label" data-pt="parceiros" data-en="partners">parceiros</div>
+                <h2 class="parceiros-title" data-pt="produtos que gostamos de trabalhar juntos"
+                    data-en="products we love building together">
+                    produtos que gostamos de trabalhar juntos
+                </h2>
+                <div class="parceiros-grid">
+                    <a href="https://romaflores.com.br/" target="_blank" rel="noopener" class="parceiro-card">
+                        <div class="parceiro-header">
+                            <div class="parceiro-nome">roma flores</div>
+                            <span class="parceiro-arrow">↗</span>
+                        </div>
+                        <p class="parceiro-desc" data-pt="marketplace de flores com entrega feita diretamente por parceiro."
+                           data-en="flower marketplace with delivery handled directly by a partner.">
+                            marketplace de flores com entrega feita diretamente por parceiro.
+                        </p>
+                        <div class="parceiro-tag">marketplace · e-commerce</div>
+                    </a>
+
+                    <a href="https://www.contadoris.com.br/" target="_blank" rel="noopener" class="parceiro-card">
+                        <div class="parceiro-header">
+                            <div class="parceiro-nome">contadoris</div>
+                            <span class="parceiro-arrow">↗</span>
+                        </div>
+                        <p class="parceiro-desc" data-pt="sistema de controle financeiro para escritórios de contabilidade."
+                           data-en="financial management system for accounting firms.">
+                            sistema de controle financeiro para escritórios de contabilidade.
+                        </p>
+                        <div class="parceiro-tag" data-pt="fintech · sistema completo" data-en="fintech · full system">fintech · sistema completo</div>
+                    </a>
+
+                    <a href="https://splitpot.com.br/" target="_blank" rel="noopener" class="parceiro-card">
+                        <div class="parceiro-header">
+                            <div class="parceiro-nome">splitpot</div>
+                            <span class="parceiro-arrow">↗</span>
+                        </div>
+                        <p class="parceiro-desc" data-pt="app de controle de caixa para jogos de poker."
+                           data-en="cash-tracking app for poker games.">
+                            app de controle de caixa para jogos de poker.
+                        </p>
+                        <div class="parceiro-tag" data-pt="app · gestão de caixa" data-en="app · cash management">app · gestão de caixa</div>
+                    </a>
+
+                    <a href="https://apps.apple.com/br/app/cachub/id6774345519?l=en-GB" target="_blank" rel="noopener" class="parceiro-card">
+                        <div class="parceiro-header">
+                            <div class="parceiro-nome">cachub</div>
+                            <span class="parceiro-arrow">↗</span>
+                        </div>
+                        <p class="parceiro-desc" data-pt="controle de documentos para colecionadores, caçadores e atiradores."
+                           data-en="document management for collectors, hunters and shooters.">
+                            controle de documentos para colecionadores, caçadores e atiradores.
+                        </p>
+                        <div class="parceiro-tag" data-pt="app · gestão de documentos" data-en="app · document management">app · gestão de documentos</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-b2b">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">tatusoft</div>
+                    <div class="footer-tagline" data-pt="consultoria brasileira de produtos digitais."
+                         data-en="a brazilian digital product consultancy.">
+                        consultoria brasileira de produtos digitais.
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#metodo" data-pt="como funciona" data-en="how it works">como funciona</a>
+                    <a href="#parceiros" data-pt="parceiros" data-en="partners">parceiros</a>
+                    <a href="#ideia" data-pt="conversar" data-en="let's talk">conversar</a>
+                    <a href="quem-somos.html" data-pt="quem somos" data-en="about us">quem somos</a>
+                    <a href="mailto:oi@tatusoft.com.br">oi@tatusoft.com.br</a>
+                </div>
+            </div>
+            <div class="footer-divider">
+                <div class="footer-left">
+                    <span class="footer-pebble"></span>
+                    <span class="footer-copyright">© 2026 tatusoft</span>
+                </div>
+                <button class="lang-switch-footer" aria-label="alternar idioma">
+                    <span class="lang-pt active">pt</span>
+                    <span> · </span>
+                    <span class="lang-en">en</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Handle page transitions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if coming from IA page
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('from') === 'ia') {
+                // Show returning animation briefly
+                const splash = document.getElementById('transitionSplash');
+                if (splash) {
+                    splash.style.display = 'flex';
+                    splash.style.animation = 'splashout 1s ease forwards';
+                    setTimeout(() => {
+                        splash.style.display = 'none';
+                    }, 1000);
+                }
+            }
+
+            // Handle idea input click
+            const ideaContainer = document.querySelector('.idea-input-container');
+            if (ideaContainer) {
+                ideaContainer.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const splash = document.getElementById('transitionSplash');
+                    if (splash) {
+                        splash.style.display = 'flex';
+                        setTimeout(() => {
+                            window.location.href = 'conversa-ia.html';
+                        }, 900);
+                    } else {
+                        window.location.href = 'conversa-ia.html';
+                    }
+                });
+            }
+        });
+
+        // Add splash animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes splashout {
+                0%, 45% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

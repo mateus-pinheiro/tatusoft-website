@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tatusoft - Conheça os sócios e a história da consultoria brasileira de produtos digitais.">
-    <title>Quem Somos - tatusoft</title>
+    <meta name="description" content="Tatusoft - Conheça os sócios. Dois sócios, bastante bagagem. Construímos produtos digitais com experiência em bancos, fintechs, agro, varejo, investimentos e cripto.">
+    <meta name="keywords" content="tatusoft, consultoria, produtos digitais, sócios, equipe, experiência">
+    <title>Quem Somos - Tatusoft</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231B1915'/%3E%3C/svg%3E">
@@ -17,14 +18,13 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* Page specific styles */
         html { scroll-behavior: smooth; }
         body { overflow: auto; height: auto; }
 
-        /* Page specific styles */
         .page-wrapper { min-height: 100vh; }
 
-        /* Hero Section */
-        .hero-about {
+        .hero-quem-somos {
             max-width: 1140px;
             margin: 0 auto;
             padding: clamp(48px, 9vw, 120px) clamp(20px, 4vw, 48px) clamp(48px, 7vw, 96px);
@@ -38,7 +38,7 @@
             text-transform: uppercase;
         }
 
-        .hero-about h1 {
+        .hero-quem-somos h1 {
             margin: 20px 0 0;
             font-size: clamp(42px, 7.4vw, 94px);
             font-weight: 900;
@@ -48,59 +48,73 @@
             max-width: 980px;
         }
 
-        .hero-about p {
+        .hero-quem-somos .hero-desc {
             margin: clamp(22px, 3vw, 34px) 0 0;
             font-size: clamp(18px, 2.3vw, 25px);
             font-weight: 500;
             letter-spacing: -0.01em;
             line-height: 1.42;
             max-width: 720px;
-            color: var(--grafite);
         }
 
-        /* Partners Section */
-        .partners-section {
-            background: var(--leite);
+        .socios-section {
+            background: #FCFBF8;
             border-top: 1px solid rgba(27, 25, 21, 0.12);
             border-bottom: 1px solid rgba(27, 25, 21, 0.12);
         }
 
-        .partners-container {
+        .socios-content {
             max-width: 1140px;
             margin: 0 auto;
             padding: clamp(56px, 8vw, 100px) clamp(20px, 4vw, 48px);
         }
 
-        .partners-grid {
+        .socios-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 16px;
+            letter-spacing: 0.08em;
+            color: var(--pedra);
+        }
+
+        .socios-title {
+            margin: 16px 0 0;
+            font-size: clamp(28px, 4vw, 46px);
+            font-weight: 800;
+            font-stretch: 112%;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            max-width: 720px;
+        }
+
+        .socios-grid {
             margin-top: clamp(36px, 5vw, 56px);
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: clamp(28px, 3.5vw, 44px);
         }
 
-        .partner-card {
+        .socio-card {
             display: flex;
             flex-direction: column;
             gap: 22px;
         }
 
-        .partner-photo {
+        .socio-photo {
+            position: relative;
             width: 100%;
             aspect-ratio: 4/5;
             border-radius: 18px;
+            overflow: hidden;
             background: #ECE6DA;
             border: 1px solid rgba(27, 25, 21, 0.1);
-            overflow: hidden;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pedra);
+            font-size: 16px;
         }
 
-        .partner-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .partner-info h3 {
+        .socio-name {
             margin: 0;
             font-size: clamp(24px, 2.8vw, 32px);
             font-weight: 800;
@@ -108,7 +122,7 @@
             letter-spacing: -0.025em;
         }
 
-        .partner-info p {
+        .socio-bio {
             margin: 16px 0 0;
             font-size: 16.5px;
             line-height: 1.55;
@@ -116,7 +130,7 @@
             max-width: 460px;
         }
 
-        .company-tags {
+        .socio-companies {
             margin-top: 12px;
             display: flex;
             flex-wrap: wrap;
@@ -124,16 +138,14 @@
         }
 
         .company-tag {
-            background: rgba(27, 25, 21, 0.08);
             padding: 6px 12px;
+            background: rgba(27, 25, 21, 0.08);
             border-radius: 999px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 11.5px;
-            letter-spacing: 0.05em;
-            color: var(--pedra);
+            font-size: 14px;
+            color: var(--grafite);
         }
 
-        .linkedin-btn {
+        .socio-linkedin {
             margin-top: 22px;
             display: inline-flex;
             align-items: center;
@@ -144,16 +156,31 @@
             font-family: 'IBM Plex Mono', monospace;
             font-size: 12.5px;
             letter-spacing: 0.04em;
+            transition: all 0.2s ease;
         }
 
-        /* Experience Section */
+        .socio-linkedin:hover {
+            background: var(--grafite);
+            color: var(--papel);
+            opacity: 1;
+        }
+
+        .shared-note {
+            margin-top: clamp(36px, 4.5vw, 52px);
+            font-size: clamp(17px, 2vw, 21px);
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
+            max-width: 720px;
+        }
+
         .experience-section {
             background: var(--grafite);
             color: var(--papel);
             overflow: hidden;
         }
 
-        .experience-header {
+        .experience-content {
             max-width: 1140px;
             margin: 0 auto;
             padding: clamp(44px, 6vw, 72px) clamp(20px, 4vw, 48px) clamp(28px, 3vw, 40px);
@@ -183,7 +210,7 @@
             padding-bottom: clamp(44px, 6vw, 72px);
         }
 
-        .marquee {
+        .marquee-content {
             display: flex;
             width: max-content;
             white-space: nowrap;
@@ -191,12 +218,7 @@
             will-change: transform;
         }
 
-        @keyframes marquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
-
-        .marquee-content {
+        .marquee-items {
             display: flex;
             align-items: center;
             gap: clamp(28px, 4vw, 52px);
@@ -213,13 +235,17 @@
             transform: translateY(-0.14em);
         }
 
-        /* CTA Section */
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
         .cta-section {
             background: var(--grafite);
             color: var(--papel);
         }
 
-        .cta-container {
+        .cta-content {
             max-width: 1140px;
             margin: 0 auto;
             padding: clamp(64px, 9vw, 120px) clamp(20px, 4vw, 48px);
@@ -246,7 +272,7 @@
             color: var(--papel);
         }
 
-        .cta-subtitle {
+        .cta-desc {
             margin: 22px 0 0;
             font-size: clamp(17px, 2.1vw, 21px);
             line-height: 1.5;
@@ -254,7 +280,7 @@
             max-width: 560px;
         }
 
-        .cta-actions {
+        .cta-buttons {
             margin-top: clamp(28px, 4vw, 40px);
             display: flex;
             flex-wrap: wrap;
@@ -262,7 +288,7 @@
             align-items: center;
         }
 
-        .btn-primary-light {
+        .btn-cta-primary {
             background: var(--papel);
             color: var(--grafite);
             border-radius: 999px;
@@ -272,14 +298,16 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .btn-primary-light:hover {
+        .btn-cta-primary:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            opacity: 1;
         }
 
-        .btn-outline-light {
+        .btn-cta-secondary {
             border: 1.5px solid rgba(244, 241, 234, 0.5);
             color: var(--papel);
             border-radius: 999px;
@@ -289,27 +317,51 @@
             display: inline-flex;
             align-items: center;
             gap: 9px;
+            transition: all 0.2s ease;
         }
 
-        .email-light {
+        .btn-cta-secondary:hover {
+            background: var(--papel);
+            color: var(--grafite);
+            opacity: 1;
+        }
+
+        .cta-email {
             color: rgba(244, 241, 234, 0.72);
             font-family: 'IBM Plex Mono', monospace;
             font-size: 13.5px;
             letter-spacing: 0.03em;
         }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .hero-quem-somos {
+                padding: clamp(32px, 8vw, 48px) 20px;
+            }
+
+            .socios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .marquee-items {
+                font-size: 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-cta-primary,
+            .btn-cta-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="conectar pelo whatsapp" class="whatsapp-button">
-        <span class="whatsapp-ring"></span>
-        <span class="whatsapp-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
-            </svg>
-        </span>
-    </a>
-
+    <!-- Main Layout -->
     <div class="page-wrapper">
         <!-- Navigation -->
         <header class="nav">
@@ -318,6 +370,7 @@
                 tatusoft
             </a>
             <nav class="nav-menu">
+                <a href="index.html" class="nav-link" data-pt="início" data-en="home">início</a>
                 <button class="lang-switch" aria-label="alternar idioma">
                     <span class="lang-pt active">pt</span>
                     <span class="lang-divider"> · </span>
@@ -327,112 +380,117 @@
         </header>
 
         <!-- Hero Section -->
-        <section class="hero-about">
-            <div class="eyebrow" data-pt="nossa história" data-en="our story">nossa história</div>
-            <h1 data-pt="do que é feito o melhor código?" data-en="what makes the best code?">do que é feito o melhor código?</h1>
-            <p data-pt="não é sobre linhas perfeitas. é sobre gente que entende do problema antes de escrever a primeira função." data-en="it's not about perfect lines. it's about people who understand the problem before writing the first function.">
-                não é sobre linhas perfeitas. é sobre gente que entende do problema antes de escrever a primeira função.
+        <section class="hero-quem-somos">
+            <div class="eyebrow" data-pt="quem somos" data-en="about us">quem somos</div>
+            <h1 data-pt="dois sócios, bastante bagagem." data-en="two partners, a lot of shipped product.">
+                dois sócios, bastante bagagem.
+            </h1>
+            <p class="hero-desc" data-pt="já passamos por bancos e fintechs, agro, varejo, investimentos e cripto. empresas de todos os tamanhos e tecnologias de todo tipo. é essa bagagem que entra em cada projeto da tatusoft."
+               data-en="we have worked across banks and fintechs, agriculture, retail, investments and crypto — companies of every size and all kinds of technology. that background goes into every tatusoft project.">
+                já passamos por bancos e fintechs, agro, varejo, investimentos e cripto. empresas de todos os tamanhos e tecnologias de todo tipo. é essa bagagem que entra em cada projeto da tatusoft.
             </p>
         </section>
 
-        <!-- Partners Section -->
-        <section class="partners-section">
-            <div class="partners-container">
-                <div class="experience-label" data-pt="sócios" data-en="partners">sócios</div>
-                <h2 class="experience-title" data-pt="duas visões, um propósito." data-en="two visions, one purpose.">duas visões, um propósito.</h2>
+        <!-- Sócios Section -->
+        <section class="socios-section">
+            <div class="socios-content">
+                <div class="socios-label" data-pt="os sócios" data-en="the partners">os sócios</div>
+                <h2 class="socios-title" data-pt="quem senta com você." data-en="who you actually work with.">
+                    quem senta com você.
+                </h2>
 
-                <div class="partners-grid">
-                    <!-- Partner 1 -->
-                    <div class="partner-card">
-                        <div class="partner-photo">
-                            <!-- Photo placeholder -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ECE6DA, #E0D6C4); display: flex; align-items: center; justify-content: center; color: var(--pedra); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">
-                                [foto mateus]
-                            </div>
+                <div class="socios-grid">
+                    <!-- Mateus -->
+                    <div class="socio-card">
+                        <div class="socio-photo">
+                            <!-- Placeholder for photo -->
+                            <span data-pt="foto mateus" data-en="mateus photo">foto mateus</span>
                         </div>
-                        <div class="partner-info">
-                            <h3>mateus pinheiro</h3>
-                            <p data-pt="12 anos desenhando arquiteturas que escalam. passou por fintechs, e-commerce e healthtech — sempre onde o código vira produto e o produto vira negócio." data-en="12 years designing architectures that scale. went through fintechs, e-commerce and healthtech — always where code becomes product and product becomes business.">
-                                12 anos desenhando arquiteturas que escalam. passou por fintechs, e-commerce e healthtech — sempre onde o código vira produto e o produto vira negócio.
+                        <div>
+                            <h3 class="socio-name">Mateus França Pinheiro</h3>
+                            <p class="socio-bio" data-pt="amante de música, esporte e de aprender coisa nova. gosta de estar perto de quem usa o produto e de entender o problema antes de propor a solução."
+                               data-en="in love with music, sports and learning new things. likes being close to whoever uses the product and understanding the problem before proposing a solution.">
+                                amante de música, esporte e de aprender coisa nova. gosta de estar perto de quem usa o produto e de entender o problema antes de propor a solução.
                             </p>
-                            <div class="company-tags">
-                                <span class="company-tag">c6 bank</span>
-                                <span class="company-tag">mercado livre</span>
-                                <span class="company-tag">dr. consulta</span>
-                                <span class="company-tag">e-kont</span>
-                                <span class="company-tag">clearsale</span>
-                                <span class="company-tag">linx</span>
-                                <span class="company-tag">dasa</span>
-                                <span class="company-tag">stone</span>
+                            <div class="socio-companies">
+                                <span class="company-tag">PayPal</span>
+                                <span class="company-tag">Santander</span>
+                                <span class="company-tag">Foxbit</span>
+                                <span class="company-tag">Genial Investimentos</span>
+                                <span class="company-tag">Universal Leaf</span>
+                                <span class="company-tag">Reclame Aqui</span>
+                                <span class="company-tag">LovePeople</span>
+                                <span class="company-tag">Peddi</span>
                             </div>
-                            <a href="https://www.linkedin.com/in/mateus-f-pinheiro-15124bb3/" target="_blank" rel="noopener" class="linkedin-btn">
+                            <a href="https://www.linkedin.com/in/mateus-f-pinheiro-15124bb3/" target="_blank" rel="noopener" class="socio-linkedin">
                                 linkedin <span>↗</span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Partner 2 -->
-                    <div class="partner-card">
-                        <div class="partner-photo">
-                            <!-- Photo placeholder -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ECE6DA, #E0D6C4); display: flex; align-items: center; justify-content: center; color: var(--pedra); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">
-                                [foto matheus]
-                            </div>
+                    <!-- Matheus -->
+                    <div class="socio-card">
+                        <div class="socio-photo">
+                            <!-- Placeholder for photo -->
+                            <span data-pt="foto matheus" data-en="matheus photo">foto matheus</span>
                         </div>
-                        <div class="partner-info">
-                            <h3>matheus mendonça</h3>
-                            <p data-pt="6 anos criando produtos que resolvem problemas reais. especialista em transformar ideias complexas em interfaces que fazem sentido." data-en="6 years creating products that solve real problems. specialist in transforming complex ideas into interfaces that make sense.">
-                                6 anos criando produtos que resolvem problemas reais. especialista em transformar ideias complexas em interfaces que fazem sentido.
+                        <div>
+                            <h3 class="socio-name">Matheus Alves Mendonça</h3>
+                            <p class="socio-bio" data-pt="movido por coisa nova, de aquários a impressora 3d. foi head de mobile e vive testando o próximo experimento para trazer pro trabalho."
+                               data-en="driven by anything new — from aquariums to 3d printers. former head of mobile, always testing the next experiment to bring into the work.">
+                                movido por coisa nova, de aquários a impressora 3d. foi head de mobile e vive testando o próximo experimento para trazer pro trabalho.
                             </p>
-                            <div class="company-tags">
-                                <span class="company-tag">stone</span>
-                                <span class="company-tag">linx</span>
-                                <span class="company-tag">ekont</span>
+                            <div class="socio-companies">
+                                <span class="company-tag">Monnos · head de mobile</span>
+                                <span class="company-tag">Santander</span>
+                                <span class="company-tag">Genial Investimentos</span>
                             </div>
-                            <a href="https://www.linkedin.com/in/matheus-alves-mendonca/" target="_blank" rel="noopener" class="linkedin-btn">
+                            <a href="https://www.linkedin.com/in/matheus-alves-mendonca/" target="_blank" rel="noopener" class="socio-linkedin">
                                 linkedin <span>↗</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div style="margin-top: clamp(36px, 4.5vw, 52px); max-width: 720px;">
-                    <p style="margin: 0; font-size: clamp(17px, 2vw, 21px); font-weight: 500; letter-spacing: -0.01em; line-height: 1.4;" data-pt="juntos, somamos experiência em mais de 50 produtos digitais. do mvp à escala, do app ao sistema complexo — sempre com a mesma obsessão: produto bom é produto no ar." data-en="together, we add up experience in over 50 digital products. from mvp to scale, from app to complex system — always with the same obsession: good product is live product.">
-                        juntos, somamos experiência em mais de 50 produtos digitais. do mvp à escala, do app ao sistema complexo — sempre com a mesma obsessão: produto bom é produto no ar.
-                    </p>
-                </div>
+                <p class="shared-note" data-pt="os dois começaram na engenharia e botam a mão no código sempre que o projeto pede."
+                   data-en="both started in engineering and get their hands on the code whenever the project needs it.">
+                    os dois começaram na engenharia e botam a mão no código sempre que o projeto pede.
+                </p>
             </div>
         </section>
 
-        <!-- Experience Section -->
+        <!-- Experience Marquee -->
         <section class="experience-section">
-            <div class="experience-header">
-                <div class="experience-label" data-pt="por onde passamos" data-en="where we've been">por onde passamos</div>
-                <h2 class="experience-title" data-pt="grandes empresas, grandes aprendizados." data-en="great companies, great learnings.">grandes empresas, grandes aprendizados.</h2>
+            <div class="experience-content">
+                <div class="experience-label" data-pt="por onde a gente passou" data-en="where we have been">por onde a gente passou</div>
+                <h2 class="experience-title" data-pt="anos construindo produto dentro de grandes empresas."
+                    data-en="years building product inside large companies.">
+                    anos construindo produto dentro de grandes empresas.
+                </h2>
             </div>
             <div class="marquee-container">
-                <div class="marquee">
-                    <div class="marquee-content">
-                        <span>c6 bank</span><span class="marquee-dot">●</span>
-                        <span>mercado livre</span><span class="marquee-dot">●</span>
-                        <span>dr. consulta</span><span class="marquee-dot">●</span>
-                        <span>e-kont</span><span class="marquee-dot">●</span>
-                        <span>clearsale</span><span class="marquee-dot">●</span>
-                        <span>linx</span><span class="marquee-dot">●</span>
-                        <span>dasa</span><span class="marquee-dot">●</span>
-                        <span>stone</span><span class="marquee-dot">●</span>
-                        <span>ton</span><span class="marquee-dot">●</span>
+                <div class="marquee-content">
+                    <div class="marquee-items">
+                        <span>PayPal</span><span class="marquee-dot">●</span>
+                        <span>Santander</span><span class="marquee-dot">●</span>
+                        <span>Genial Investimentos</span><span class="marquee-dot">●</span>
+                        <span>Foxbit</span><span class="marquee-dot">●</span>
+                        <span>Monnos</span><span class="marquee-dot">●</span>
+                        <span>Universal Leaf</span><span class="marquee-dot">●</span>
+                        <span>Reclame Aqui</span><span class="marquee-dot">●</span>
+                        <span>LovePeople</span><span class="marquee-dot">●</span>
+                        <span>Peddi</span><span class="marquee-dot">●</span>
                     </div>
-                    <div class="marquee-content" aria-hidden="true">
-                        <span>c6 bank</span><span class="marquee-dot">●</span>
-                        <span>mercado livre</span><span class="marquee-dot">●</span>
-                        <span>dr. consulta</span><span class="marquee-dot">●</span>
-                        <span>e-kont</span><span class="marquee-dot">●</span>
-                        <span>clearsale</span><span class="marquee-dot">●</span>
-                        <span>linx</span><span class="marquee-dot">●</span>
-                        <span>dasa</span><span class="marquee-dot">●</span>
-                        <span>stone</span><span class="marquee-dot">●</span>
-                        <span>ton</span><span class="marquee-dot">●</span>
+                    <div class="marquee-items" aria-hidden="true">
+                        <span>PayPal</span><span class="marquee-dot">●</span>
+                        <span>Santander</span><span class="marquee-dot">●</span>
+                        <span>Genial Investimentos</span><span class="marquee-dot">●</span>
+                        <span>Foxbit</span><span class="marquee-dot">●</span>
+                        <span>Monnos</span><span class="marquee-dot">●</span>
+                        <span>Universal Leaf</span><span class="marquee-dot">●</span>
+                        <span>Reclame Aqui</span><span class="marquee-dot">●</span>
+                        <span>LovePeople</span><span class="marquee-dot">●</span>
+                        <span>Peddi</span><span class="marquee-dot">●</span>
                     </div>
                 </div>
             </div>
@@ -440,19 +498,26 @@
 
         <!-- CTA Section -->
         <section class="cta-section">
-            <div class="cta-container">
+            <div class="cta-content">
                 <div class="cta-pebble"></div>
-                <h2 class="cta-title" data-pt="vamos colocar sua ideia no ar?" data-en="shall we ship your idea?">vamos colocar sua ideia no ar?</h2>
-                <p class="cta-subtitle" data-pt="sem novela. prazo real, escopo fechado. conversa com IA primeiro, depois com gente." data-en="no drama. real deadline, closed scope. AI chat first, then with people.">
-                    sem novela. prazo real, escopo fechado. conversa com IA primeiro, depois com gente.
+                <h2 class="cta-title" data-pt="vamos construir o seu?" data-en="let's build yours?">
+                    vamos construir o seu?
+                </h2>
+                <p class="cta-desc" data-pt="conte a ideia pra nossa IA e receba uma primeira estimativa em minutos. ou chama a gente direto."
+                   data-en="tell your idea to our AI and get a first estimate in minutes. or reach out to us directly.">
+                    conte a ideia pra nossa IA e receba uma primeira estimativa em minutos. ou chama a gente direto.
                 </p>
-                <div class="cta-actions">
-                    <a href="conversa-ia.html" class="btn-primary-light">
-                        <span data-pt="conversar com IA" data-en="chat with AI">conversar com IA</span>
+                <div class="cta-buttons">
+                    <a href="conversa-ia.html" class="btn-cta-primary">
+                        <span data-pt="conversar com a IA" data-en="talk to the AI">conversar com a IA</span>
                         <span style="font-family: 'IBM Plex Mono', monospace">→</span>
                     </a>
-                    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn-outline-light">whatsapp</a>
-                    <a href="mailto:oi@tatusoft.com.br" class="email-light">oi@tatusoft.com.br</a>
+                    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn-cta-secondary">
+                        whatsapp
+                    </a>
+                    <a href="mailto:oi@tatusoft.com.br" class="cta-email">
+                        oi@tatusoft.com.br
+                    </a>
                 </div>
             </div>
         </section>
@@ -465,7 +530,7 @@
                     <span class="footer-copyright">© 2026 tatusoft</span>
                 </div>
                 <div class="footer-right">
-                    <a href="mailto:oi@tatusoft.com.br">oi@tatusoft.com.br</a>
+                    <a href="index.html" data-pt="início" data-en="home">início</a>
                     <button class="lang-switch-footer" aria-label="alternar idioma">
                         <span class="lang-pt active">pt</span>
                         <span> · </span>
