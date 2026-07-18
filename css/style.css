@@ -401,6 +401,7 @@ input[type="email"].error {
 .footer {
     flex: none;
     width: 100%;
+    padding-top: clamp(36px, 5vw, 56px);
 }
 
 .footer-content {
@@ -411,6 +412,61 @@ input[type="email"].error {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Footer Expanded (for index page) */
+.footer-expanded {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 48px) clamp(28px, 4vw, 44px);
+}
+
+.footer-top-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 48px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: 900;
+    font-stretch: 125%;
+    letter-spacing: -0.045em;
+}
+
+.footer-tagline {
+    font-size: 17px;
+    color: var(--pedra);
+    max-width: 280px;
+    line-height: 1.55;
+}
+
+.footer-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+.footer-bottom-section {
+    margin-top: 32px;
+    border-top: 1px solid rgba(27, 25, 21, 0.14);
+    padding-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     align-items: center;
     justify-content: space-between;
 }
@@ -573,7 +629,7 @@ input[type="email"].error {
 
     /* Compact Footer */
     .footer {
-        padding: 0;
+        padding-top: 20px;
     }
 
     .footer-content {
@@ -582,6 +638,38 @@ input[type="email"].error {
         justify-content: space-between;
         align-items: center;
         gap: 8px;
+    }
+
+    /* Footer Expanded Mobile */
+    .footer-expanded {
+        padding: 0 20px 20px;
+    }
+
+    .footer-top-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        font-size: 19px;
+    }
+
+    .footer-tagline {
+        font-size: 15px;
+    }
+
+    .footer-nav-links {
+        font-size: 12px;
+        gap: 10px 20px;
+    }
+
+    .footer-nav-links a[href^="mailto"] {
+        display: none;
+    }
+
+    .footer-bottom-section {
+        margin-top: 20px;
+        padding-top: 12px;
     }
 
     .footer-left,

@@ -19,10 +19,22 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         /* Page specific styles */
-        html { scroll-behavior: smooth; }
-        body { overflow: auto; height: auto; }
+        html {
+            scroll-behavior: smooth;
+            overflow: auto;
+            height: auto;
+        }
+        body {
+            overflow: auto;
+            height: auto;
+            min-height: 100vh;
+        }
 
-        .page-wrapper { min-height: 100vh; }
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
         /* Hero Section B2B */
         .hero-b2b {
