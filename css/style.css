@@ -79,56 +79,6 @@ input::placeholder, textarea::placeholder {
     }
 }
 
-@keyframes wa-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-@keyframes wa-ring {
-    0% {
-        transform: scale(1);
-        opacity: 0.55;
-    }
-    70%, 100% {
-        transform: scale(1.9);
-        opacity: 0;
-    }
-}
-
-/* ========== WhatsApp Button ========== */
-.whatsapp-button {
-    position: fixed;
-    right: clamp(18px, 3vw, 32px);
-    bottom: clamp(18px, 3vw, 32px);
-    z-index: 95;
-    width: 62px;
-    height: 62px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: wa-float 3s ease-in-out infinite;
-}
-
-.whatsapp-ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 999px;
-    background: var(--whatsapp);
-    animation: wa-ring 2.4s ease-out infinite;
-}
-
-.whatsapp-icon {
-    position: relative;
-    width: 62px;
-    height: 62px;
-    border-radius: 999px;
-    background: var(--whatsapp);
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 26px rgba(27, 25, 21, 0.28);
-}
 
 /* ========== Transition Splash ========== */
 .transition-splash {
@@ -417,6 +367,29 @@ input[type="email"].error {
     font-family: 'IBM Plex Mono', monospace;
 }
 
+.btn-whatsapp {
+    border: 1.5px solid var(--grafite);
+    cursor: pointer;
+    background: transparent;
+    color: var(--grafite);
+    border-radius: 999px;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Archivo', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-whatsapp:hover {
+    background: var(--grafite);
+    color: var(--papel);
+    transform: translateY(-2px);
+}
+
 .form-note {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 14px;
@@ -576,13 +549,22 @@ input[type="email"].error {
     /* Fixed button position */
     .form-actions {
         margin-top: 10px;
-        justify-content: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
     }
 
     .btn-primary {
         width: 100%;
         padding: 12px 24px;
         font-size: 15px;
+    }
+
+    .btn-whatsapp {
+        width: 100%;
+        padding: 12px 24px;
+        font-size: 14px;
+        justify-content: center;
     }
 
     .form-note {
@@ -624,24 +606,6 @@ input[type="email"].error {
     .footer-pebble {
         display: none; /* Hide logo icon in footer on mobile */
     }
-
-    /* Adjust WhatsApp button */
-    .whatsapp-button {
-        width: 54px;
-        height: 54px;
-        right: 16px;
-        bottom: 70px; /* Move up to not overlap with footer */
-    }
-
-    .whatsapp-icon {
-        width: 54px;
-        height: 54px;
-    }
-
-    .whatsapp-icon svg {
-        width: 28px;
-        height: 28px;
-    }
 }
 
 /* Extra small devices (very small phones) */
@@ -667,6 +631,11 @@ input[type="email"].error {
     .btn-primary {
         padding: 12px 20px;
         font-size: 14px;
+    }
+
+    .btn-whatsapp {
+        padding: 12px 20px;
+        font-size: 13px;
     }
 }
 
